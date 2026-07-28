@@ -1,6 +1,10 @@
 // selecting events
 let input= document.querySelector('input');
 let tbody_row=document.querySelectorAll('.body-row');
+let openModalBtn=document.getElementById('open-modal-btn');
+let closeModalBtn=document.getElementById('close-modal-btn');
+let modalOverlay=document.getElementById('modal-overlay');
+
 
 // input.addEventListener("input",(e)=>{
 //     console.log("pressed");
@@ -28,5 +32,19 @@ input.addEventListener("input",(e)=>{
             row.style.display="none";
         }
     };
-   
+});
+
+// creating new post
+// open modal event
+openModalBtn.addEventListener("click",()=>{
+    modalOverlay.style.display='flex';
+});
+// close modal event
+closeModalBtn.addEventListener("click",()=>{
+    modalOverlay.style.display='none';
+});
+window.addEventListener('click',(e)=>{
+    if(e.target===modalOverlay){
+        modalOverlay.style.display='none';
+    }
 });

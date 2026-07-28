@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/ca7cd19ef1.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <nav>
@@ -20,6 +21,37 @@
     <header>
         <input type="search" id="search-input">
         <button>search</button>
+        <button id="open-modal-btn" class="btn"> Create new post<i class="fa-regular fa-square-plus"></i></button>
+        <div id="modal-overlay">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Add New Post</h2>
+                    <button id="close-modal-btn" class="close-btn">&times;</button>
+                </div>
+                <form id="add-post-form">
+                    <div class="form-group">
+                        <label for="post-title">Post Title</label>
+                        <input type="text" id="post-title" required placeholder="Enter title...">
+                    </div>
+                    <div class="form-group">
+                        <label for="release-date">Release Date</label>
+                        <input type="text" id="release-date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="post-views">Views</label>
+                        <input type="text" id="post-views" placeholder="e.g. 350k">
+                    </div>
+                    <div class="form-group">
+                        <label for="post-status">Status</label>
+                        <select  id="post-status">
+                            <option value="Published">Published</option>
+                            <option value="Draft">Draft</option>
+                        </select>
+                    </div>
+                    <button type="submit"class="submit-btn">Save Post</button>
+                </form>
+            </div>
+        </div>
     </header>
     <main>
         <section class="cards">
