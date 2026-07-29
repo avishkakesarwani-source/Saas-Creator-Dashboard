@@ -6,6 +6,7 @@ let closeModalBtn=document.getElementById('close-modal-btn');
 let modalOverlay=document.getElementById('modal-overlay');
 
 
+
 // input.addEventListener("input",(e)=>{
 //     console.log("pressed");
 //     let filtertext=e.target.value.toLowerCase();
@@ -47,4 +48,26 @@ window.addEventListener('click',(e)=>{
     if(e.target===modalOverlay){
         modalOverlay.style.display='none';
     }
+});
+
+// save post button
+const postForm= document.getElementById('add-post-form');
+const tbody=document.querySelector('tbody');
+postForm.addEventListener("submit",(e)=>{
+    e.preventDefault();//stops page refresh
+    const title= document.getElementById('post-title').value;
+    const date=document.getElementById('release-date').value;
+    const views=document.getElementById('post-views').value;
+    const status=document.getElementById('post-status').value;
+    const newRow= document.createElement('tr');
+    newRow.innerHTML=`
+        <td>${title}l</td>
+        <td>${date}</td>
+        <td>${views}</td>
+        <td>${status}</td>
+        `;
+    tbody.appendChild(newRow);
+    // clearing form and hiding model
+    postForm.reset();
+    document.getElementById('modal-overlay').style.display='none';
 });
