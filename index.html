@@ -29,14 +29,14 @@
                     <button id="close-modal-btn" class="close-btn">&times;</button>
                 </div>
                 <!-- new post form -->
-                <form id="add-post-form">
+                <form id="add-post-form" action="">
                     <div class="form-group">
                         <label for="post-title">Post Title</label>
                         <input type="text" id="post-title" required placeholder="Enter title...">
                     </div>
                     <div class="form-group">
                         <label for="release-date">Release Date</label>
-                        <input type="text" id="release-date" required>
+                        <input type="text" id="release-date" required placeholder="YYYY/MM/DD">
                     </div>
                     <div class="form-group">
                         <label for="post-views">Views</label>
@@ -56,10 +56,14 @@
     </header>
     <main>
         <section class="cards">
-            <article class="card1">
-                <h3 >Total views <span>1.2M</span></h3>
+            <article class="card">
+                <h3>Total Posts</h3>
+                <p id="total-posts-count">0</p>
             </article>
-            <article class="card2">
+            <article class="card">
+                <h3 >Total views <span id="total-views-count">1.2M</span></h3>
+            </article>
+            <article class="car2">
                 <h3>Total Earnings <span>$4,500</span></h3>
             </article>
             <article class="card3">
